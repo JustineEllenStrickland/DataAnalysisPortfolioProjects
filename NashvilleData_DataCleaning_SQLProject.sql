@@ -8,7 +8,7 @@ SELECT *
 FROM `Cleaning.nashville_housing_data`;
 -----------------------------------------------------------------
 
-Standardize date format
+-- Standardize date format
 
 SELECT
   SaleDate,
@@ -31,7 +31,7 @@ FROM `Cleaning.nashville_housing_data` AS nash;
 
 -----------------------------------------------------------------
 
--- Populate property address data
+-- Populate missing/null property address data
 
 SELECT PropertyAddress
 FROM `Cleaning.nashville_housing_data`;
@@ -59,7 +59,7 @@ INNER JOIN `Cleaning.nashville_housing_data` AS b
 
 -----------------------------------------------------------------
 
--- Breaking out address into individual columns (address, city, state)
+-- Break-out address into individual columns (address, city, state)
 
 SELECT PropertyAddress
 FROM `Cleaning.nashville_housing_data`;
