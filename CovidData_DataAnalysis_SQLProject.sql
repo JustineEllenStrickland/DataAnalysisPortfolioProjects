@@ -83,7 +83,7 @@ INNER JOIN `covid_data.covid_vaccinations` AS vacc
 WHERE deaths.continent IS NOT NULL
 ORDER BY 2,3;
 
--- 7. 
+-- 7. Use the data from point 6 to create a CTE and compare the fields selected in the CTE. Use the CTE value of rolling_vacc to find the rolling amount of vaccinations compared to the population as a percentage.
 
 WITH rolling_count AS (
   SELECT 
@@ -113,7 +113,7 @@ INNER JOIN `covid_data.covid_deaths` as d
 WHERE rc.location LIKE '%States%'
 ORDER BY rc.date DESC;
 
--- 8.
+-- 8. Create a view of the continent, location, date, population, new_vaccinations, and sum of the new vaccinations by country and organized by date. There must be a join with the covid deaths and covid vaccinations tables. The data must be from countries with a continent so as not to skew the data.
 
 CREATE VIEW percent_population_vaccinated AS
 SELECT d.continent, d.location, d.date, d.population, v.new_vaccinations
